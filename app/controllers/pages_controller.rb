@@ -1,10 +1,9 @@
 class PagesController < ApplicationController
-    skip_before_action :authorize_request, only: [:index]
+    skip_before_action :authorize_request, only: [ :index ]
 
     def index
-        # render file: "pages/index"
-        # no need to render explicitly — Rails renders index.html.erb by default
-        # render layout: "application"
+      # render file: "pages/index"
+      # render layout: "application"
     end
 
     def signup

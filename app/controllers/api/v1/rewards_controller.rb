@@ -5,7 +5,7 @@ module Api
                 rewards = Reward.currently_active
                             .page(params[:page] || 1)
                             .per(params[:per_page] || 10)
-                
+
                 render json: rewards, meta: pagination_meta(rewards)
             end
 

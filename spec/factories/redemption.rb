@@ -5,4 +5,3 @@ FactoryBot.define do
         redeemed_at { Time.now }
     end
 end
-  

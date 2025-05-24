@@ -46,9 +46,9 @@ RSpec.describe "Redemptions API", type: :request do
         context "with inactive reward" do
             it "returns an error" do
                 inactive_reward = create(:reward, status: "inactive")
-            
+
                 post "/api/v1/users/redemptions", params: { reward: { id: inactive_reward.id } }, headers: headers
-            
+
                 expect(response).to have_http_status(:unprocessable_entity)
                 expect(JSON.parse(response.body)["error"]).to eq("Reward is not available.")
             end
@@ -57,9 +57,9 @@ RSpec.describe "Redemptions API", type: :request do
         context "with insufficient points" do
             it "returns an error" do
                 expensive_reward = create(:reward, points_cost: 10_000)
-            
+
                 post "/api/v1/users/redemptions", params: { reward: { id: expensive_reward.id } }, headers: headers
-            
+
                 expect(response).to have_http_status(:unprocessable_entity)
                 expect(JSON.parse(response.body)["error"]).to eq("Insufficient points.")
             end

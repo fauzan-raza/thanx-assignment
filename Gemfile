@@ -29,17 +29,17 @@ gem "kamal", require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
-gem 'bcrypt', '~> 3.1.7'
+gem "bcrypt", "~> 3.1.7"
 
 gem "jwt"
 
-gem 'active_model_serializers', '~> 0.10.0'
+gem "active_model_serializers", "~> 0.10.0"
 
-gem 'thor'
+gem "thor"
 
-gem 'httparty'
+gem "httparty"
 
-gem 'kaminari'
+gem "kaminari"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -57,11 +57,11 @@ group :development, :test do
     # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
     gem "rubocop-rails-omakase", require: false
 
-    gem 'rspec-rails'
-    gem 'factory_bot_rails'
-    gem 'faker'
-    gem 'database_cleaner-active_record'
-    gem 'shoulda-matchers', '~> 5.0'
+    gem "rspec-rails"
+    gem "factory_bot_rails"
+    gem "faker"
+    gem "database_cleaner-active_record"
+    gem "shoulda-matchers", "~> 5.0"
 end
 
 gem "jsbundling-rails", "~> 1.3"
