@@ -9,7 +9,7 @@ class Redemption::CreateRedemption
     attr_reader :redemption, :error_message
   
     def call
-        return false unless valid?
+        return fail_with(errors.full_messages.to_sentence) unless valid?
 
         reward = Reward.find_by(id: reward_id)
         return fail_with("Reward not found.") if reward.nil?
@@ -22,7 +22,7 @@ class Redemption::CreateRedemption
             @redemption = user.redemptions.create!(reward: , redeemed_at: Time.current)
             user.point_transactions.create!(
                 amount: -reward.points_cost,
-                reason: "Redemption for reward ##{reward.id}",
+                reason: "reward_redeemed",
                 reference: @redemption
             )
         end
